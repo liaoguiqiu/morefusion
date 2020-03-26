@@ -10,10 +10,10 @@
   </head>
   <body>
     <div class="row">
-      <div class="col-lg-8 offset-lg-2">
+      <div class="col-8 offset-2">
 
         <div class="text-center">
-          <h1 class="mt-4"><i>More</i><b>Fusion</b></h1>
+          <h1 class="mt-5"><i>More</i><b>Fusion</b></h1>
           <h4 class="mt-4">Multi-object Reasoning for 6D Pose Estimation from Volumetric Fusion</h4>
           <ul class="list-inline mt-4">
             <li class="list-inline-item"><a href="https://wkentaro.com" target="_blank">Kentaro Wada</a></li>
@@ -21,18 +21,30 @@
             <li class="list-inline-item ml-4">Stephen James</li>
             <li class="list-inline-item ml-4">Daniel Lenton</li>
             <li class="list-inline-item ml-4">Andrew J. Davison</li>
-            <li class="mt-2"><a href="https://www.imperial.ac.uk/dyson-robotics-lab/">Dyson Robotic Laboratory</a>, <a href="https://www.imperial.ac.uk/">Imperial College London</a></li>
+            <li class="mt-2">
+              <a href="https://www.imperial.ac.uk/dyson-robotics-lab/">Dyson Robotic Laboratory</a>,
+              <a href="https://www.imperial.ac.uk/" class="ml-2">Imperial College London</a>
+            </li>
+          </ul>
+          <ul class="list-inline mt-4">
+            <li class="list-inline-item"><a href="#">Paper</a></li>
+            <li class="list-inline-item ml-4"><a href="https://github.com/wkentaro/morefusion.git" target="_blank">Code</a></li>
+            <li class="list-inline-item ml-4"><a href="#">Video</a></li>
+            <li class="list-inline-item ml-4"><a href="#">Dataset</a></li>
           </ul>
         </div>
 
-        <div class="row">
-          <div class="col-lg-6 offset-lg-1">
+        <div class="row mt-4">
+          <div class="col-7 offset-1">
             <p class="lead">
               Robots and other smart devices need efficient object-based scene
               representations from their on-board vision systems to reason about
               contact, physics and occlusion. Recognized precise object models
               will play an important role alongside non-parametric
-              reconstructions of unrecognized structures. We present a system,
+              reconstructions of unrecognized structures.
+            </p>
+            <p class="lead">
+              In this paper, we present a system,
               <u>MoreFusion</u>,
               which can estimate the accurate poses of multiple known objects in
               contact and occlusion from real-time, embodied multi-view vision.
@@ -43,10 +55,165 @@
               for multiple objects in contact.
             </p>
           </div>
-          <div class="col-lg-3">
-            <img src="assets/img/scene.jpg" class="img-fluid">
-            <img src="assets/img/rviz_pose.jpg" class="img-fluid mt-1">
+          <div class="col-3">
+            <img src="assets/img/intro/scene.jpg" class="img-fluid" width="90%">
+            <img src="assets/img/intro/pose.jpg" class="img-fluid mt-1" width="90%">
           </div>
+        </div>
+
+        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-10 offset-1">
+          <h4>Overview Video (with audio)</h4>
+          <div align="center" class="mt-4">
+            <!-- <iframe width="640" height="360" src="#" allowfullscreen></iframe> -->
+            <video width="640" height="360" controls>
+              <source src="assets/video/main.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-10 offset-1">
+          <h4>Pipeline</h4>
+          <p>
+            We present a pipeline that achieves state-of-the-art results for 6D pose estimation of known objects, which
+            (a) reconstructs a scene with volumetric fusion;
+            (b) predicts object pose utilizing the volumetric reconstruction;
+            (c) refines the predicted pose respecting surrounding geometry and pose predictions;
+            (d) validates plural pose hypothesis to find a highly confident pose estimate.
+          </p>
+          <div class="pl-4 pr-4">
+            <img src="assets/img/system.png" class="img-fluid">
+          </div>
+        </div>
+
+        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-10 offset-1">
+          <h4>Surrounding Spatial Information</h4>
+          <div class="alert alert-warning">TODO</div>
+          <div class="row">
+            <div class="col-2 offset-1"><img src="assets/img/surrounding_information/scene.png" class="img-fluid"></div>
+            <div class="col-2"><img src="assets/img/surrounding_information/grid_self.png" class="img-fluid"></div>
+            <div class="col-2"><img src="assets/img/surrounding_information/grid_other.png" class="img-fluid"></div>
+            <div class="col-2"><img src="assets/img/surrounding_information/grid_free.png" class="img-fluid"></div>
+            <div class="col-2"><img src="assets/img/surrounding_information/grid_unknown.png" class="img-fluid"></div>
+          </div>
+        </div>
+
+        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-10 offset-1">
+          <h4>Pose Prediction Results</h4>
+          <div class="alert alert-warning">TODO</div>
+          <table>
+            <tr class="text-center">
+              <th>Scene</th>
+              <th>DenseFusion*</th>
+              <th>MoreFusion<small>-occ</small></th>
+              <th>MoreFusion</th>
+              <th>Ground Truth</th>
+            </tr>
+            <tr>
+              <td><img class="img-fluid" src="assets/img/pose_prediction/w_occ_rgb.jpg"></td>
+              <td><img class="img-fluid" src="assets/img/pose_prediction/pcd_res.jpg"></td>
+              <td><img class="img-fluid" src="assets/img/pose_prediction/wo_occ_res.jpg"></td>
+              <td><img class="img-fluid" src="assets/img/pose_prediction/w_occ_res.jpg"></td>
+              <td><img class="img-fluid" src="assets/img/pose_prediction/w_occ_gt.jpg"></td>
+            </tr>
+          </table>
+          <div class="row mt-4">
+            <div class="col-6">
+              <table class="table table-bordered text-center">
+                <tr><th>Model</th><th>Dataset</th><th>ADD(-S)</th><th>ADD-S</th></tr>
+                <tr><th>DenseFusion*</th><th rowspan="2" style="vertical-align: middle;">YCB-Video</th><td>88.4</td><td>94.9</td></tr>
+                <tr><th>MoreFusion</th><td><u>91.0</u></td><td><u>95.7</u></td></tr>
+                <tr><th>DenseFusion*</th><th rowspan="2" style="vertical-align: middle;">Cluttered YCB</th><td>81.7</td><td>91.7</td></tr>
+                <tr><th>MoreFusion</th><td><u>83.4</u></td><td><u>92.3</u></td></tr>
+              </table>
+            </div>
+            <div class="col-6">
+              <table class="table table-bordered text-center">
+                <tr><th>Model</th><th>ADD(-S)</th><th>ADD-S</th></tr>
+                <tr><th>MoreFusion<small>-occ</small></th><td>82.5</td><td>91.7</td></tr>
+                <tr><th>MoreFusion</th><td>83.4</td><td>92.3</td></tr>
+                <tr><th>MoreFusion<small>+target-</small></th><td>84.7</td><td>93.3</td></tr>
+                <tr><th>MoreFusion<small>+target- +bg</small></th><td>85.5</td><td>93.8</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-10 offset-1">
+          <h4>Pose Refinement Results</h4>
+          <div class="alert alert-warning">TODO</div>
+          <div class="row">
+            <div class="col-6">
+              <video width="100%" height="auto" controls>
+                <source src="assets/video/pose_refinement.mp4#t=3" type="video/mp4">
+              </video>
+            </div>
+            <div class="col-6">
+              <img src="assets/img/refine.png" class="img-fluid">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-10 offset-1">
+          <h4>Scene Reconstruction</h4>
+          <div class="alert alert-warning">TODO</div>
+          <div class="row">
+            <div class="col-6">
+              <video width="100%" height="auto" controls>
+                <source src="assets/video/reconstruction1.mp4#t=3" type="video/mp4">
+              </video>
+            </div>
+            <div class="col-6">
+              <video width="100%" height="auto" controls>
+                <source src="assets/video/reconstruction2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-10 offset-1">
+          <h4>Robotic Pick-and-Place</h4>
+          <div class="alert alert-warning">TODO</div>
+          <div class="row">
+            <div class="col-6">
+              <video width="100%" height="auto" controls>
+                <source src="assets/video/demonstration1.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="col-6">
+              <video width="100%" height="auto" controls>
+                <source src="assets/video/demonstration2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-10 offset-1">
+          <h4>Bibtex</h4>
+          <pre>
+@inproceedings{Wada:etal:CVPR2020,
+  title={{MoreFusion}: Multi-object Reasoning for {6D} Pose Estimation from Volumetric Fusion},
+  author={Kentaro Wada and Edgar Sucar and Stephen James and Daniel Lenton and Andrew J. Davison},
+  booktitle={Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition ({CVPR})},
+  year={2020},
+}
+          </pre>
+        </div>
+
+        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-10 offset-1 mb-5">
+          <h4>Contact</h4>
+          <p>
+            If you have any questions, please feel free to contact
+            <a href="https://wkentaro.com" target="_blank">Kentaro Wada</a>.
+          </p>
         </div>
 
       </div>
