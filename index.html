@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MoreFusion: Multi-object Reasoning for 6D Pose Estimation from Volumetric Fusion</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+
+        <div class="text-center">
+          <h1 class="mt-4"><i>More</i><b>Fusion</b></h1>
+          <h4 class="mt-4">Multi-object Reasoning for 6D Pose Estimation from Volumetric Fusion</h4>
+          <ul class="list-inline mt-4">
+            <li class="list-inline-item"><a href="https://wkentaro.com" target="_blank">Kentaro Wada</a></li>
+            <li class="list-inline-item ml-4">Edgar Sucar</li>
+            <li class="list-inline-item ml-4">Stephen James</li>
+            <li class="list-inline-item ml-4">Daniel Lenton</li>
+            <li class="list-inline-item ml-4">Andrew J. Davison</li>
+            <li class="mt-2"><a href="https://www.imperial.ac.uk/dyson-robotics-lab/">Dyson Robotic Laboratory</a>, <a href="https://www.imperial.ac.uk/">Imperial College London</a></li>
+          </ul>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 offset-lg-1">
+            <p class="lead">
+              Robots and other smart devices need efficient object-based scene
+              representations from their on-board vision systems to reason about
+              contact, physics and occlusion. Recognized precise object models
+              will play an important role alongside non-parametric
+              reconstructions of unrecognized structures. We present a system,
+              <u>MoreFusion</u>,
+              which can estimate the accurate poses of multiple known objects in
+              contact and occlusion from real-time, embodied multi-view vision.
+              Our approach makes 3D object pose proposals from single RGB-D
+              views, accumulates pose estimates and non-parametric occupancy
+              information from multiple views as the camera moves, and performs
+              joint optimization to estimate consistent, non-intersecting poses
+              for multiple objects in contact.
+            </p>
+          </div>
+          <div class="col-lg-3">
+            <img src="assets/img/scene.jpg" class="img-fluid">
+            <img src="assets/img/rviz_pose.jpg" class="img-fluid mt-1">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  </body>
+</html>
