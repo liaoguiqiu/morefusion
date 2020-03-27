@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="row">
-      <div class="col-8 offset-2">
+      <div class="col-lg-8 offset-lg-2">
 
         <div class="text-center">
           <h1 class="mt-5"><i>More</i><b>Fusion</b></h1>
@@ -41,7 +41,7 @@
         </div>
 
         <div class="row mt-4">
-          <div class="col-7 offset-1">
+          <div class="col-lg-7 offset-lg-1">
             <p class="lead">
               Robots and other smart devices need efficient object-based scene
               representations from their on-board vision systems to reason about
@@ -61,25 +61,25 @@
               for multiple objects in contact.
             </p>
           </div>
-          <div class="col-3">
+          <div class="col-lg-3 text-center">
             <img src="assets/img/intro/scene.jpg" class="img-fluid" width="90%">
             <img src="assets/img/intro/pose.jpg" class="img-fluid mt-1" width="90%">
           </div>
         </div>
 
-        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
-        <div class="col-10 offset-1" id="video">
+        <div class="col-lg-10 offset-lg-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-lg-10 offset-lg-1" id="video">
           <h4>Overview Video (with audio)</h4>
           <div align="center" class="mt-4">
             <!-- <iframe width="640" height="360" src="#" allowfullscreen></iframe> -->
-            <video width="640" height="360" controls>
+            <video width="100%" height="auto" controls>
               <source src="assets/video/main.mp4" type="video/mp4">
             </video>
           </div>
         </div>
 
-        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
-        <div class="col-10 offset-1">
+        <div class="col-lg-10 offset-lg-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-lg-10 offset-lg-1">
           <h4>Pipeline</h4>
           <p>
             We present a pipeline that achieves state-of-the-art results for 6D pose estimation of known objects, which
@@ -93,8 +93,8 @@
           </div>
         </div>
 
-        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
-        <div class="col-10 offset-1">
+        <div class="col-lg-10 offset-lg-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-lg-10 offset-lg-1">
           <h4>Surrounding Spatial Information</h4>
           <p>
             Each target object for pose prediction carries its own
@@ -106,31 +106,31 @@
             because of occlusion and sensor range limit.
           </p>
           <div class="row">
-            <div class="col-2 offset-1 text-center">
+            <div class="col-4 col-lg-2 offset-lg-1 text-center">
               <img src="assets/img/surrounding_information/scene.png" class="img-fluid">
-              (a) Scene
+              <p>(a) Scene</p>
             </div>
-            <div class="col-2 text-center">
+            <div class="col-4 col-lg-2 text-center">
               <img src="assets/img/surrounding_information/grid_self.png" class="img-fluid">
-              (b) Grid (self)
+              <p>(b) Grid (self)</p>
             </div>
-            <div class="col-2 text-center">
+            <div class="col-4 col-lg-2 text-center">
               <img src="assets/img/surrounding_information/grid_other.png" class="img-fluid">
-              (c) Grid (other)
+              <p>(c) Grid (other)</p>
             </div>
-            <div class="col-2 text-center">
+            <div class="col-4 col-lg-2 text-center">
               <img src="assets/img/surrounding_information/grid_free.png" class="img-fluid">
-              (d) Grid (free)
+              <p>(d) Grid (free)</p>
             </div>
-            <div class="col-2 text-center">
+            <div class="col-4 col-lg-2 text-center">
               <img src="assets/img/surrounding_information/grid_unknown.png" class="img-fluid">
-              (e) Grid (unknown)
+              <p>(e) Grid (unknown)</p>
             </div>
           </div>
         </div>
 
-        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
-        <div class="col-10 offset-1">
+        <div class="col-lg-10 offset-lg-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-lg-10 offset-lg-1">
           <h4>Pose Prediction Results</h4>
           <p>
             Our proposed model (MoreFusion) performs consistent pose prediction
@@ -155,39 +155,43 @@
             </tr>
           </table>
           <div class="row mt-4">
-            <div class="col-6">
+            <div class="col-lg-6">
               <p>
                 We evaluated the pose prediction in different datasets (YCB-Video, Cluttered-YCB),
                 and the result shows that the proposed model consistently gives better pose estimate.
               </p>
-              <table class="table table-bordered text-center">
-                <tr><th>Model</th><th>Dataset</th><th>ADD(-S)</th><th>ADD-S</th></tr>
-                <tr><th>DenseFusion*</th><th rowspan="2" style="vertical-align: middle;">YCB-Video</th><td>88.4</td><td>94.9</td></tr>
-                <tr><th>MoreFusion</th><td><u>91.0</u></td><td><u>95.7</u></td></tr>
-                <tr><th>DenseFusion*</th><th rowspan="2" style="vertical-align: middle;">Cluttered YCB</th><td>81.7</td><td>91.7</td></tr>
-                <tr><th>MoreFusion</th><td><u>83.4</u></td><td><u>92.3</u></td></tr>
-              </table>
+              <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                  <tr><th>Model</th><th>Dataset</th><th>ADD(-S)</th><th>ADD-S</th></tr>
+                  <tr><th>DenseFusion*</th><th rowspan="2" style="vertical-align: middle;">YCB-Video</th><td>88.4</td><td>94.9</td></tr>
+                  <tr><th>MoreFusion</th><td><u>91.0</u></td><td><u>95.7</u></td></tr>
+                  <tr><th>DenseFusion*</th><th rowspan="2" style="vertical-align: middle;">Cluttered YCB</th><td>81.7</td><td>91.7</td></tr>
+                  <tr><th>MoreFusion</th><td><u>83.4</u></td><td><u>92.3</u></td></tr>
+                </table>
+              </div>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6">
               <p>
                 As more and more occupancy information is available:
                 MF<small>-occ</small> (no occupancy) &lt; MF &lt; MF<small>+target-</small> (full grid of nontarget),
                 MF<small>+target- +bg</small> (full grid of background objects),
                 the model gives better pose estimate.
               </p>
-              <table class="table table-bordered text-center">
-                <tr><th>Model</th><th>ADD(-S)</th><th>ADD-S</th></tr>
-                <tr><th>MF<small>-occ</small></th><td>82.5</td><td>91.7</td></tr>
-                <tr><th>MoreFusion (MF)</th><td>83.4</td><td>92.3</td></tr>
-                <tr><th>MF<small>+target-</small></th><td>84.7</td><td>93.3</td></tr>
-                <tr><th>MF<small>+target- +bg</small></th><td>85.5</td><td>93.8</td></tr>
-              </table>
+              <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                  <tr><th>Model</th><th>ADD(-S)</th><th>ADD-S</th></tr>
+                  <tr><th>MF<small>-occ</small></th><td>82.5</td><td>91.7</td></tr>
+                  <tr><th>MoreFusion (MF)</th><td>83.4</td><td>92.3</td></tr>
+                  <tr><th>MF<small>+target-</small></th><td>84.7</td><td>93.3</td></tr>
+                  <tr><th>MF<small>+target- +bg</small></th><td>85.5</td><td>93.8</td></tr>
+                </table>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
-        <div class="col-10 offset-1">
+        <div class="col-lg-10 offset-lg-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-lg-10 offset-lg-1">
           <h4>Pose Refinement Results</h4>
           <p>
             The proposed collision-based pose refinement, Iterative Collision Check (ICC),
@@ -198,28 +202,28 @@
             in point space with ICP.
           </p>
           <div class="row">
-            <div class="col-6">
+            <div class="col-lg-6">
               <video width="100%" height="auto" controls>
                 <source src="assets/video/pose_refinement.mp4#t=3" type="video/mp4">
               </video>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6">
               <img src="assets/img/refine.png" class="img-fluid">
             </div>
           </div>
         </div>
 
-        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
-        <div class="col-10 offset-1">
+        <div class="col-lg-10 offset-lg-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-lg-10 offset-lg-1">
           <h4>Scene Reconstruction</h4>
           <div class="row">
-            <div class="col-6">
+            <div class="col-lg-6">
               <p>Robotic Top-down Camera Sequence</p>
               <video width="100%" height="auto" controls>
                 <source src="assets/video/reconstruction1.mp4#t=3" type="video/mp4">
               </video>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6">
               <p>Table-top Side-view Camera Sequence</p>
               <video width="100%" height="auto" controls>
                 <source src="assets/video/reconstruction2.mp4" type="video/mp4">
@@ -228,17 +232,17 @@
           </div>
         </div>
 
-        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
-        <div class="col-10 offset-1">
+        <div class="col-lg-10 offset-lg-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-lg-10 offset-lg-1">
           <h4>Robotic Pick-and-Place</h4>
           <div class="row">
-            <div class="col-6">
+            <div class="col-lg-6">
               <p>Pick-and-Place of the Target Object (Red Box) from a Pile</p>
               <video width="100%" height="auto" controls>
                 <source src="assets/video/demonstration1.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6">
               <p>More Examples</p>
               <video width="100%" height="auto" controls>
                 <source src="assets/video/demonstration2.mp4" type="video/mp4">
@@ -247,8 +251,8 @@
           </div>
         </div>
 
-        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
-        <div class="col-10 offset-1">
+        <div class="col-lg-10 offset-lg-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-lg-10 offset-lg-1">
           <h4>Bibtex</h4>
           <pre>
 @inproceedings{Wada:etal:CVPR2020,
@@ -260,8 +264,8 @@
           </pre>
         </div>
 
-        <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
-        <div class="col-10 offset-1 mb-5">
+        <div class="col-lg-10 offset-lg-1"><hr class="mt-4 mb-4"></div>
+        <div class="col-lg-10 offset-lg-1 mb-5">
           <h4>Contact</h4>
           <p>
             If you have any questions, please feel free to contact
