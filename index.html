@@ -18,19 +18,25 @@
           <ul class="list-inline mt-4">
             <li class="list-inline-item"><a href="https://wkentaro.com" target="_blank">Kentaro Wada</a></li>
             <li class="list-inline-item ml-4">Edgar Sucar</li>
-            <li class="list-inline-item ml-4">Stephen James</li>
+            <li class="list-inline-item ml-4"><a href="https://stepjam.github.io" target="_blank">Stephen James</a></li>
             <li class="list-inline-item ml-4">Daniel Lenton</li>
-            <li class="list-inline-item ml-4">Andrew J. Davison</li>
+            <li class="list-inline-item ml-4"><a href="https://www.doc.ic.ac.uk/~ajd/" target="_blank">Andrew J. Davison</a></li>
             <li class="mt-2">
-              <a href="https://www.imperial.ac.uk/dyson-robotics-lab/">Dyson Robotic Laboratory</a>,
-              <a href="https://www.imperial.ac.uk/" class="ml-2">Imperial College London</a>
+              <a href="https://www.imperial.ac.uk/dyson-robotics-lab/" target="_blank">Dyson Robotic Laboratory</a>,
+              <a href="https://www.imperial.ac.uk/" target="_blank" class="ml-2">Imperial College London</a>
             </li>
           </ul>
           <ul class="list-inline mt-4">
-            <li class="list-inline-item"><a href="#">Paper</a></li>
-            <li class="list-inline-item ml-4"><a href="https://github.com/wkentaro/morefusion.git" target="_blank">Code</a></li>
-            <li class="list-inline-item ml-4"><a href="#">Video</a></li>
-            <li class="list-inline-item ml-4"><a href="#">Dataset</a></li>
+            <li class="list-inline-item">
+              <a href="https://drive.google.com/uc?id=1-D6_t1fcsUyWb-6O_6l0o_NW7nfZ0emg" target="_blank">Paper</a>
+            </li>
+            <li class="list-inline-item ml-4">
+              <a href="https://github.com/wkentaro/morefusion.git" target="_blank">Code</a>
+            </li>
+            <li class="list-inline-item ml-4"><a href="assets/video/main.mp4" target="_blank">Video</a></li>
+            <li class="list-inline-item ml-4">
+              <a href="https://drive.google.com/uc?id=1mwa1gQy8ibuc3Gc-6lgvt64VFmH5CW4q" target="_blank">Dataset</a>
+            </li>
           </ul>
         </div>
 
@@ -62,7 +68,7 @@
         </div>
 
         <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
-        <div class="col-10 offset-1">
+        <div class="col-10 offset-1" id="video">
           <h4>Overview Video (with audio)</h4>
           <div align="center" class="mt-4">
             <!-- <iframe width="640" height="360" src="#" allowfullscreen></iframe> -->
@@ -90,20 +96,48 @@
         <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
         <div class="col-10 offset-1">
           <h4>Surrounding Spatial Information</h4>
-          <div class="alert alert-warning">TODO</div>
+          <p>
+            Each target object for pose prediction carries its own
+            volumetric occupancy grid. The voxels that make up this grid can be
+            in one of the following states: b) Space occupied by the object
+            itself from the target object reconstruction; c) Space
+            occupied by other objects; d) Free space identified by depth
+            measurement. e) Unknown space unobserved by mapping
+            because of occlusion and sensor range limit.
+          </p>
           <div class="row">
-            <div class="col-2 offset-1"><img src="assets/img/surrounding_information/scene.png" class="img-fluid"></div>
-            <div class="col-2"><img src="assets/img/surrounding_information/grid_self.png" class="img-fluid"></div>
-            <div class="col-2"><img src="assets/img/surrounding_information/grid_other.png" class="img-fluid"></div>
-            <div class="col-2"><img src="assets/img/surrounding_information/grid_free.png" class="img-fluid"></div>
-            <div class="col-2"><img src="assets/img/surrounding_information/grid_unknown.png" class="img-fluid"></div>
+            <div class="col-2 offset-1 text-center">
+              <img src="assets/img/surrounding_information/scene.png" class="img-fluid">
+              (a) Scene
+            </div>
+            <div class="col-2 text-center">
+              <img src="assets/img/surrounding_information/grid_self.png" class="img-fluid">
+              (b) Grid (self)
+            </div>
+            <div class="col-2 text-center">
+              <img src="assets/img/surrounding_information/grid_other.png" class="img-fluid">
+              (c) Grid (other)
+            </div>
+            <div class="col-2 text-center">
+              <img src="assets/img/surrounding_information/grid_free.png" class="img-fluid">
+              (d) Grid (free)
+            </div>
+            <div class="col-2 text-center">
+              <img src="assets/img/surrounding_information/grid_unknown.png" class="img-fluid">
+              (e) Grid (unknown)
+            </div>
           </div>
         </div>
 
         <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
         <div class="col-10 offset-1">
           <h4>Pose Prediction Results</h4>
-          <div class="alert alert-warning">TODO</div>
+          <p>
+            Our proposed model (MoreFusion) performs consistent pose prediction
+            with surroundings, where the baseline (DenseFusion∗) and the
+            variant without occupancy information
+            (Morefusion<small>−occ</small>) fails.
+          </p>
           <table>
             <tr class="text-center">
               <th>Scene</th>
@@ -122,6 +156,10 @@
           </table>
           <div class="row mt-4">
             <div class="col-6">
+              <p>
+                We evaluated the pose prediction in different datasets (YCB-Video, Cluttered-YCB),
+                and the result shows that the proposed model consistently gives better pose estimate.
+              </p>
               <table class="table table-bordered text-center">
                 <tr><th>Model</th><th>Dataset</th><th>ADD(-S)</th><th>ADD-S</th></tr>
                 <tr><th>DenseFusion*</th><th rowspan="2" style="vertical-align: middle;">YCB-Video</th><td>88.4</td><td>94.9</td></tr>
@@ -131,12 +169,18 @@
               </table>
             </div>
             <div class="col-6">
+              <p>
+                As more and more occupancy information is available:
+                MF<small>-occ</small> (no occupancy) &lt; MF &lt; MF<small>+target-</small> (full grid of nontarget),
+                MF<small>+target- +bg</small> (full grid of background objects),
+                the model gives better pose estimate.
+              </p>
               <table class="table table-bordered text-center">
                 <tr><th>Model</th><th>ADD(-S)</th><th>ADD-S</th></tr>
-                <tr><th>MoreFusion<small>-occ</small></th><td>82.5</td><td>91.7</td></tr>
-                <tr><th>MoreFusion</th><td>83.4</td><td>92.3</td></tr>
-                <tr><th>MoreFusion<small>+target-</small></th><td>84.7</td><td>93.3</td></tr>
-                <tr><th>MoreFusion<small>+target- +bg</small></th><td>85.5</td><td>93.8</td></tr>
+                <tr><th>MF<small>-occ</small></th><td>82.5</td><td>91.7</td></tr>
+                <tr><th>MoreFusion (MF)</th><td>83.4</td><td>92.3</td></tr>
+                <tr><th>MF<small>+target-</small></th><td>84.7</td><td>93.3</td></tr>
+                <tr><th>MF<small>+target- +bg</small></th><td>85.5</td><td>93.8</td></tr>
               </table>
             </div>
           </div>
@@ -145,7 +189,14 @@
         <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
         <div class="col-10 offset-1">
           <h4>Pose Refinement Results</h4>
-          <div class="alert alert-warning">TODO</div>
+          <p>
+            The proposed collision-based pose refinement, Iterative Collision Check (ICC),
+            gives better convergence minimizing the intersections among objects,
+            as well as aligning the model surface to the depth observation.
+            For detailed refinement (right figure), it is better to combine ICC with Iterative Closest Point (ICP),
+            to initially align model with ICC in volumetric resolution and then to refine the detail
+            in point space with ICP.
+          </p>
           <div class="row">
             <div class="col-6">
               <video width="100%" height="auto" controls>
@@ -161,14 +212,15 @@
         <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
         <div class="col-10 offset-1">
           <h4>Scene Reconstruction</h4>
-          <div class="alert alert-warning">TODO</div>
           <div class="row">
             <div class="col-6">
+              <p>Robotic Top-down Camera Sequence</p>
               <video width="100%" height="auto" controls>
                 <source src="assets/video/reconstruction1.mp4#t=3" type="video/mp4">
               </video>
             </div>
             <div class="col-6">
+              <p>Table-top Side-view Camera Sequence</p>
               <video width="100%" height="auto" controls>
                 <source src="assets/video/reconstruction2.mp4" type="video/mp4">
               </video>
@@ -179,14 +231,15 @@
         <div class="col-10 offset-1"><hr class="mt-4 mb-4"></div>
         <div class="col-10 offset-1">
           <h4>Robotic Pick-and-Place</h4>
-          <div class="alert alert-warning">TODO</div>
           <div class="row">
             <div class="col-6">
+              <p>Pick-and-Place of the Target Object (Red Box) from a Pile</p>
               <video width="100%" height="auto" controls>
                 <source src="assets/video/demonstration1.mp4" type="video/mp4">
               </video>
             </div>
             <div class="col-6">
+              <p>More Examples</p>
               <video width="100%" height="auto" controls>
                 <source src="assets/video/demonstration2.mp4" type="video/mp4">
               </video>
