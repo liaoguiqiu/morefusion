@@ -5,10 +5,12 @@ require('three/examples/js/loaders/OBJLoader');
 require('three/examples/js/loaders/MTLLoader');
 require('three/examples/js/controls/OrbitControls');
 
+robotic_top_down = {};
+
 var scene = new THREE.Scene();
 scene.background = new THREE.Color(0xeeeeee);
 
-resetCamera = function() {
+robotic_top_down.resetCamera = function() {
   camera.position.set(-0.1, 0, 1.4);
   camera.rotation.set(0, 0, 0);
   camera.up.set(0, 0, 1);
@@ -17,7 +19,7 @@ resetCamera = function() {
 var div = document.getElementById("reconstruction-robotic-top-down")
 
 var camera = new THREE.PerspectiveCamera(30, 640 / 480, 0.01, 1000);
-resetCamera();
+robotic_top_down.resetCamera();
 
 var ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
 scene.add(ambientLight);
@@ -34,10 +36,10 @@ var manager = new THREE.LoadingManager();
 var onProgress = function(xhr) {};
 var onError = function() {};
 
-controls = new THREE.OrbitControls(camera, renderer.domElement);
+var controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.autoRotate = true;
 
-toggleRotateCamera = function() {
+robotic_top_down.toggleRotateCamera = function() {
   controls.autoRotate = !controls.autoRotate;
 }
 
@@ -117,6 +119,10 @@ function animate() {
   renderer.render(scene, camera);
 }
 animate();
+
+robotic_top_down.fullScreen = function() {
+  THREEx.FullScreen.request(div);
+}
 
 },{"jquery":2,"three":3,"three/examples/js/controls/OrbitControls":4,"three/examples/js/loaders/MTLLoader":5,"three/examples/js/loaders/OBJLoader":6}],2:[function(require,module,exports){
 /*!

@@ -5,10 +5,12 @@ require('three/examples/js/loaders/OBJLoader');
 require('three/examples/js/loaders/MTLLoader');
 require('three/examples/js/controls/OrbitControls');
 
+table_top_side = {};
+
 var scene = new THREE.Scene();
 scene.background = new THREE.Color(0xeeeeee);
 
-resetCamera = function() {
+table_top_side.resetCamera = function() {
   camera.position.set(-0.8, -0.1, 0.6);
   camera.rotation.set(0, 0, 0);
   camera.up.set(0, 0, 1);
@@ -17,7 +19,7 @@ resetCamera = function() {
 var div = document.getElementById("reconstruction-table-top-side")
 
 var camera = new THREE.PerspectiveCamera(30, 640 / 480, 0.01, 1000);
-resetCamera();
+table_top_side.resetCamera();
 
 var ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
 scene.add(ambientLight);
@@ -37,7 +39,7 @@ var onError = function() {};
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.autoRotate = true;
 
-toggleRotateCamera = function() {
+table_top_side.toggleRotateCamera = function() {
   controls.autoRotate = !controls.autoRotate;
 }
 
@@ -117,6 +119,10 @@ function animate() {
   renderer.render(scene, camera);
 }
 animate();
+
+table_top_side.fullScreen = function() {
+  THREEx.FullScreen.request(div);
+}
 
 },{"jquery":2,"three":3,"three/examples/js/controls/OrbitControls":4,"three/examples/js/loaders/MTLLoader":5,"three/examples/js/loaders/OBJLoader":6}],2:[function(require,module,exports){
 /*!
