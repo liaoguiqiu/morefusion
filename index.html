@@ -11,7 +11,7 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-8 offset-lg-2">
+        <div class="col-lg-8 offset-lg-2 col-md-12">
 
           <div class="text-center">
             <h1 class="mt-5"><i>More</i><b>Fusion</b></h1>
@@ -42,7 +42,7 @@
           </div>
 
           <div class="row mt-4">
-            <div class="col-lg-7 offset-lg-1">
+            <div class="col-lg-7 offset-lg-1 col-md-7">
               <p class="lead">
                 Robots and other smart devices need efficient object-based scene
                 representations from their on-board vision systems to reason about
@@ -62,7 +62,7 @@
                 for multiple objects in contact.
               </p>
             </div>
-            <div class="col-lg-3 text-center">
+            <div class="col-lg-3 col-md-5 text-center">
               <img src="assets/img/intro/scene.jpg" class="img-fluid" width="90%">
               <img src="assets/img/intro/pose.jpg" class="img-fluid mt-1" width="90%">
             </div>
@@ -109,23 +109,23 @@
               because of occlusion and sensor range limit.
             </p>
             <div class="row">
-              <div class="col-4 col-lg-2 offset-lg-1 text-center">
+              <div class="col-4 col-md-2 offset-md-1 col-lg-2 offset-lg-1 text-center">
                 <img src="assets/img/surrounding_information/scene.png" class="img-fluid">
                 <p>(a) Scene</p>
               </div>
-              <div class="col-4 col-lg-2 text-center">
+              <div class="col-4 col-md-2 col-lg-2 text-center">
                 <img src="assets/img/surrounding_information/grid_self.png" class="img-fluid">
                 <p>(b) Grid (self)</p>
               </div>
-              <div class="col-4 col-lg-2 text-center">
+              <div class="col-4 col-md-2 col-lg-2 text-center">
                 <img src="assets/img/surrounding_information/grid_other.png" class="img-fluid">
                 <p>(c) Grid (other)</p>
               </div>
-              <div class="col-4 col-lg-2 text-center">
+              <div class="col-4 col-md-2 col-lg-2 text-center">
                 <img src="assets/img/surrounding_information/grid_free.png" class="img-fluid">
                 <p>(d) Grid (free)</p>
               </div>
-              <div class="col-4 col-lg-2 text-center">
+              <div class="col-4 col-md-2 col-lg-2 text-center">
                 <img src="assets/img/surrounding_information/grid_unknown.png" class="img-fluid">
                 <p>(e) Grid (unknown)</p>
               </div>
@@ -160,10 +160,11 @@
               </table>
             </div>
             <div class="row mt-4">
-              <div class="col-lg-6">
+              <div class="col-md-6">
                 <p>
                   We evaluated the pose prediction in different datasets (YCB-Video, Cluttered-YCB),
-                  and the result shows that the proposed model consistently gives better pose estimate.
+                  and the result shows that the proposed model consistently gives better pose estimate
+                  than the existing method.
                 </p>
                 <div class="table-responsive">
                   <table class="table table-bordered text-center">
@@ -175,7 +176,7 @@
                   </table>
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="col-md-6">
                 <p>
                   As more and more occupancy information is available:
                   MF<small>-occ</small> (no occupancy) &lt; MF &lt; MF<small>+target-</small> (full grid of nontarget),
@@ -207,12 +208,12 @@
               in point space with ICP.
             </p>
             <div class="row">
-              <div class="col-lg-6">
+              <div class="col-md-6">
                 <video preload="metadata" width="100%" height="auto" controls>
                   <source src="assets/video/pose_refinement.mp4#t=10" type="video/mp4">
                 </video>
               </div>
-              <div class="col-lg-6">
+              <div class="col-md-6">
                 <img src="assets/img/refine.png" class="img-fluid">
               </div>
             </div>
@@ -222,15 +223,15 @@
           <div class="col-lg-10 offset-lg-1">
             <h4>Scene Reconstruction</h4>
             <div class="row">
-              <div class="col-lg-6">
-                <p>Robotic Top-down Camera Sequence</p>
+              <div class="col-md-6">
+                <h6>Robotic Top-down Camera Sequence</h6>
                 <div id="reconstruction-robotic-top-down"></div>
                 <video preload="metadata" width="100%" height="auto" controls>
                   <source src="assets/video/reconstruction1.mp4#t=29" type="video/mp4">
                 </video>
               </div>
-              <div class="col-lg-6">
-                <p>Table-top Side-view Camera Sequence</p>
+              <div class="col-md-6">
+                <h6>Table-top Side-view Camera Sequence</h6>
                 <div id="reconstruction-table-top-side"></div>
                 <video preload="metadata" width="100%" height="auto" controls>
                   <source src="assets/video/reconstruction2.mp4#t=15" type="video/mp4">
@@ -243,14 +244,14 @@
           <div class="col-lg-10 offset-lg-1">
             <h4>Robotic Pick-and-Place</h4>
             <div class="row">
-              <div class="col-lg-6">
-                <p>Pick-and-Place of the Target Object (Red Box) from a Pile</p>
+              <div class="col-md-6">
+                <h6>Pick-and-Place of the Target Object (Red Box) from a Pile</h6>
                 <video preload="metadata" width="100%" height="auto" controls>
                   <source src="assets/video/demonstration1.mp4#t=15" type="video/mp4">
                 </video>
               </div>
-              <div class="col-lg-6">
-                <p>More Examples</p>
+              <div class="col-md-6">
+                <h6>More Examples...</h6>
                 <video preload="metadata" width="100%" height="auto" controls>
                   <source src="assets/video/demonstration2.mp4#t=15" type="video/mp4">
                 </video>
