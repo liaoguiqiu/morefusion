@@ -20,11 +20,11 @@ var div = document.getElementById("reconstruction-table-top-side")
 var camera = new THREE.PerspectiveCamera(30, 640 / 480, 0.01, 1000);
 table_top_side.resetCamera();
 
-var ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+var ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
 scene.add(ambientLight);
 
-var pointLight = new THREE.PointLight(0xffffff, 0.8);
-camera.add( pointLight );
+// var pointLight = new THREE.PointLight(0xffffff, 0.8);
+// camera.add( pointLight );
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize(div.offsetWidth, div.offsetWidth / 640 * 480);
