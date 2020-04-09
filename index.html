@@ -29,14 +29,14 @@
             </ul>
             <ul class="list-inline mt-4">
               <li class="list-inline-item">
-                <a href="https://drive.google.com/uc?id=1-D6_t1fcsUyWb-6O_6l0o_NW7nfZ0emg" target="_blank">Paper</a>
+                <a href="#" target="_blank" class="btn disabled">Paper</a>
               </li>
               <li class="list-inline-item ml-4">
-                <a href="https://github.com/wkentaro/morefusion.git" target="_blank">Code</a>
+                <a href="#" target="_blank" class="btn disabled">Code</a>
               </li>
-              <li class="list-inline-item ml-4"><a href="assets/video/main.mp4" target="_blank">Video</a></li>
+              <li class="list-inline-item ml-4"><a href="https://www.youtube.com/watch?v=6oLUhuZL4ko" target="_blank">Video</a></li>
               <li class="list-inline-item ml-4">
-                <a href="https://drive.google.com/uc?id=1mwa1gQy8ibuc3Gc-6lgvt64VFmH5CW4q" target="_blank">Dataset</a>
+                <a href="#" target="_blank" class="btn disabled">Dataset</a>
               </li>
             </ul>
           </div>
@@ -72,11 +72,12 @@
           <div class="col-lg-10 offset-lg-1">
             <h4 id="video">Overview Video (with audio)</h4>
             <div align="center" class="row mt-4">
-              <!-- <iframe width="640" height="360" src="#" allowfullscreen></iframe> -->
               <div class="col-lg-8 offset-lg-2">
-                <video preload="metadata" width="100%" height="auto" controls>
-                  <source src="assets/video/main.mp4" type="video/mp4">
-                </video>
+                <div class="video-container">
+                  <iframe width="1920" height="1080" src="https://www.youtube.com/embed/6oLUhuZL4ko" frameborder="0" allowfullscreen>
+                  </iframe>
+                </div>
+
               </div>
             </div>
           </div>
@@ -91,9 +92,7 @@
               (c) refines the predicted pose respecting surrounding geometry and pose predictions;
               (d) validates plural pose hypothesis to find a highly confident pose estimate.
             </p>
-            <div class="pl-4 pr-4">
-              <img src="assets/img/system.png" class="img-fluid">
-            </div>
+            <img src="assets/img/system.png" class="img-fluid">
           </div>
 
           <div class="col-lg-10 offset-lg-1"><hr class="mt-4 mb-4"></div>
@@ -209,9 +208,9 @@
             </p>
             <div class="row">
               <div class="col-md-6">
-                <video preload="metadata" width="100%" height="auto" controls>
-                  <source src="assets/video/pose_refinement.mp4#t=10" type="video/mp4">
-                </video>
+                <a href="https://youtu.be/6oLUhuZL4ko?t=95" target="_blank">
+                  <img src="assets/img/pose_refinement.gif" class="img-fluid">
+                </a>
               </div>
               <div class="col-md-6">
                 <img src="assets/img/refine.png" class="img-fluid">
@@ -225,27 +224,31 @@
             <div class="row">
               <div class="col-md-6">
                 <h6>Robotic Top-down Camera Sequence</h6>
-                <div class="mb-1">
-                  <button class="btn btn-light btn-sm" onclick="robotic_top_down.resetCamera();">Reset</button>
-                  <button class="btn btn-light btn-sm" onclick="robotic_top_down.toggleRotateCamera();">Rotate/Stop</button>
-                  <button class="btn btn-light btn-sm" onclick="robotic_top_down.fullScreen();">Fullscreen</button>
+                <div class="mb-2">
+                  <a href="https://youtu.be/6oLUhuZL4ko?t=19" target="_blank">
+                    <img src="assets/img/reconstruction1.gif" class="img-fluid">
+                  </a>
                 </div>
                 <div id="reconstruction-robotic-top-down"></div>
-                <video preload="metadata" width="100%" height="auto" controls>
-                  <source src="assets/video/reconstruction1.mp4#t=29" type="video/mp4">
-                </video>
+                <div class="mt-0">
+                  <button class="pt-0 btn btn-link btn-sm" onclick="robotic_top_down.resetCamera();">Reset</button>
+                  <button class="pt-0 btn btn-link btn-sm" onclick="robotic_top_down.toggleRotateCamera();">Rotate/Stop</button>
+                  <button class="pt-0 btn btn-link btn-sm" onclick="robotic_top_down.fullScreen();">Fullscreen</button>
+                </div>
               </div>
               <div class="col-md-6">
                 <h6>Table-top Side-view Camera Sequence</h6>
-                <div class="mb-1">
-                  <button class="btn btn-light btn-sm" onclick="table_top_side.resetCamera();">Reset</button>
-                  <button class="btn btn-light btn-sm" onclick="table_top_side.toggleRotateCamera();">Rotate/Stop</button>
-                  <button class="btn btn-light btn-sm" onclick="table_top_side.fullScreen();">Fullscreen</button>
+                <div class="mb-2">
+                  <a href="https://youtu.be/6oLUhuZL4ko?t=65" target="_blank">
+                    <img src="assets/img/reconstruction2.gif" class="img-fluid">
+                  </a>
                 </div>
                 <div id="reconstruction-table-top-side"></div>
-                <video preload="metadata" width="100%" height="auto" controls>
-                  <source src="assets/video/reconstruction2.mp4#t=15" type="video/mp4">
-                </video>
+                <div class="mt-0">
+                  <button class="pt-0 btn btn-link btn-sm" onclick="table_top_side.resetCamera();">Reset</button>
+                  <button class="pt-0 btn btn-link btn-sm" onclick="table_top_side.toggleRotateCamera();">Rotate/Stop</button>
+                  <button class="pt-0 btn btn-link btn-sm" onclick="table_top_side.fullScreen();">Fullscreen</button>
+                </div>
               </div>
             </div>
           </div>
@@ -256,15 +259,15 @@
             <div class="row">
               <div class="col-md-6">
                 <h6>Pick the Target Object (Red Box) from a Pile</h6>
-                <video preload="metadata" width="100%" height="auto" controls>
-                  <source src="assets/video/demonstration1.mp4#t=15" type="video/mp4">
-                </video>
+                <a href="https://youtu.be/6oLUhuZL4ko?t=115" target="_blank">
+                  <img src="assets/img/demonstration1.gif" class="img-fluid">
+                </a>
               </div>
               <div class="col-md-6">
                 <h6>More Examples...</h6>
-                <video preload="metadata" width="100%" height="auto" controls>
-                  <source src="assets/video/demonstration2.mp4#t=15" type="video/mp4">
-                </video>
+                <a href="https://youtu.be/6oLUhuZL4ko?t=177" target="_blank">
+                  <img src="assets/img/demonstration2.gif" class="img-fluid">
+                </a>
               </div>
             </div>
           </div>
